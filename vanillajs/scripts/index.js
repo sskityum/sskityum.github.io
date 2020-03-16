@@ -70,7 +70,7 @@ const photos = [
     'img/cat_gallery/IMG_5789_min.JPG',
     'img/cat_gallery/IMG_5791_min.JPG',
     'img/cat_gallery/IMG_5827_min.JPG',
-    'img/cat_gallery/IMG_20160201_210358_min.JPG',
+    'img/cat_gallery/IMG_20160201_210358_min.jpg',
     'img/cat_gallery/IMG_0268.JPG'
 ]
 const sketches = document.querySelectorAll('.gallery-photo-preview')
