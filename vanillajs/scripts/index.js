@@ -46,7 +46,7 @@ function handler(event) {
         open.classList.add('open')
         setTimeout(function () {
             open.classList.remove('open')
-        }, 4000)
+        }, 10000)
     }
 }
 
