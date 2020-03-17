@@ -9,13 +9,12 @@ function renderImg(src) {
         status.innerText = "загрузка..."
         let img = document.createElement('img')
         img.src = src
-        img.alt = "моя рожа"
+        img.alt = "моё фото"
         
 
         img.onload = () => resolve(img)
         img.onerror = () => reject(new Error(`Не удалось загрузить изображение ${src}`))
 
-        // document.getElementById('train-img').appendChild(img)
         rozhaImg.appendChild(img)
     })
 }
@@ -32,6 +31,17 @@ const arrow = document.querySelector('.menu-icon')
 const open = document.querySelector('.hidden-menu')
 const toClose = document.querySelector('.hidden-menu li:nth-child(1)')
 
+function remClass() {
+    open.classList.remove('open')
+} 
+function startDelay() {
+    timerId = setTimeout(remClass, 10000)
+}
+
+function counterReset() {
+    clearTimeout(timerId)
+}
+
 arrow.onmouseover = arrow.onmouseout = arrow.onclick = handler
 
 function handler(event) {
@@ -44,13 +54,12 @@ function handler(event) {
     }
     if (event.type == 'click') {
         open.classList.add('open')
-        setTimeout(function () {
-            open.classList.remove('open')
-        }, 10000)
+        startDelay()
     }
 }
 
 toClose.addEventListener('click', function () {
+    counterReset()
     open.classList.remove('open')
 })
 
@@ -85,7 +94,10 @@ const galleryPhoto = document.querySelector('.gallery-photo-closed')
 const toDoList = document.querySelector('.case-list-closed')
 const hiddenMap = document.querySelector('.hidden-my-location')
 const openToDoList = document.querySelector('.task-list h1')
-// const closeToDoList = document.querySelector('.todo-list-close')
+const catGalleryAnchor = document.getElementById('cat-gallery-anchor')
+const taskListAnchor = document.getElementById('task-list-anchor')
+const anchorQuotesPictures = document.getElementById('anchor-quotes-pictures')
+const asideAnchor = document.getElementById('aside-anchor')
 
 const addSketchClickHandler = function (sketch, photo) {
     sketch.addEventListener('click', function () {
@@ -99,35 +111,31 @@ for (var i = 0; i < sketches.length; i++) {
 
 openGalleryPhotoHiddenMenu.addEventListener('click', function () {
     galleryPhoto.classList.add('gallery-photo-open')
+    catGalleryAnchor.scrollIntoView({block: 'start', behavior: 'smooth'})
+    counterReset()
     open.classList.remove('open')
 })
 
 openTodoListHiddenMenu.addEventListener('click', function () {
     toDoList.classList.add('case-list-open')
+    taskListAnchor.scrollIntoView({block: 'start', behavior: 'smooth'})
+    counterReset()
     open.classList.remove('open')
 })
 
 openSentencesHiddenMenu.addEventListener('click', function () {
     sentencesClosed.classList.add('sentences-pictures-opened')
+    anchorQuotesPictures.scrollIntoView({block: 'start', behavior: 'smooth'})
+    counterReset()
     open.classList.remove('open')
 })
 
 openMapHiddenMenu.addEventListener('click', function () {
     hiddenMap.classList.add('my-location-opened')
+    asideAnchor.scrollIntoView({block: 'start', behavior: 'smooth'})
+    counterReset()
     open.classList.remove('open')
 })
-
-// openGalleryPhotoH1.addEventListener('click', function () {
-//     galleryPhoto.classList.add('gallery-photo-open')
-// })
-
-// openToDoList.addEventListener('click', function () {
-//     toDoList.classList.add('case-list-open')
-// })
-
-// closeToDoList.addEventListener('click', function () {
-//     toDoList.classList.remove('case-list-open')
-// })
 
 //-------------------------------------------------------------
 const list = document.querySelector('.todo-list')
@@ -161,8 +169,6 @@ const makeTask = function (item) {
     }
     list.appendChild(task)
 }
-
-
 
 for (let i = 0; i < tasksData.length; i++) {
     makeTask(tasksData[i])
@@ -295,18 +301,6 @@ let hDCardsData = [
     }
 ]
 
-// let cardsData = []
-
-// localStorage.removeItem('saveCardsData')
-
-// localStorage.setItem('savedCardsData', JSON.stringify(hDCardsData))
-
-// if (localStorage.getItem('savedCardsData')) {
-//     cardsData = JSON.parse(localStorage.getItem('savedCardsData'))
-// } else {
-//     cardsData = hDCardsData
-// }
-
 let cardsData = localStorage.getItem('savedCardsData') ? JSON.parse(localStorage.getItem('savedCardsData')) : hDCardsData
 
 const makeElement = function (tagName, className, text) {
@@ -412,23 +406,11 @@ updateCardArray.addEventListener('click', function () {
             cardsData[indices[i]].winner = true
         }
     }
-    // localStorage.setItem('savedCardsData', JSON.stringify(cardsData))
-
-    // window.location.reload()
     saveToLocalStorage('savedCardsData', cardsData, window.location.reload())
 })
 
 const openSentences = document.querySelector('.quote-pictures h1')
-// const closeSentences = document.querySelector('.sentences-pictures-close')
 const hiddenSentencesPopupMenu = document.querySelector('.hidden-sentences-popup-menu')
-
-// openSentences.addEventListener('click', function () {
-//     sentencesClosed.classList.add('sentences-pictures-opened')
-// })
-// closeSentences.addEventListener('click', function () {
-//     sentencesClosed.classList.remove('sentences-pictures-opened')
-// })
-
 
 // ---------------------------------------------------------------
 const mapIcon = document.querySelector('.map-icon')
@@ -444,8 +426,9 @@ const hiddenTodoListPopupMenu = document.querySelector('.hidden-todo-list-popup-
 // 5. popupOpenClass - класс (textParagraph) открытой подсказки
 // 6. openBlockText - текст подсказки для открытия (controlTag)
 // 7. closeBlockText - текст подсказки для закрытия (controlTag)
+// 8. sectionAnchor - якорь section блока controlTag
 
-const popupMenu = function (controlTag, controlTagOpenClass, mouseTag, paragraphPopupMenu, popupOpenClass, openBlockText, closeBlockText) {
+const popupMenu = function (controlTag, controlTagOpenClass, mouseTag, paragraphPopupMenu, popupOpenClass, openBlockText, closeBlockText, sectionAnchor) {
     mouseTag.onmouseover = mouseTag.onmouseout = handler
 
     function handler(event) {
@@ -454,6 +437,7 @@ const popupMenu = function (controlTag, controlTagOpenClass, mouseTag, paragraph
                 paragraphPopupMenu.textContent = openBlockText
                 mouseTag.addEventListener('click', function () {
                     controlTag.classList.add(controlTagOpenClass)
+                    sectionAnchor.scrollIntoView({block: 'start', behavior: 'smooth'})
                 })
             } else {
                 paragraphPopupMenu.textContent = closeBlockText
@@ -469,7 +453,39 @@ const popupMenu = function (controlTag, controlTagOpenClass, mouseTag, paragraph
     }    
 }
 
-popupMenu(hiddenMap, 'my-location-opened', mapIcon, hiddenMapPopupMenu, 'open-map-popup-menu', 'Показать на карте', 'Закрыть карту')
-popupMenu(galleryPhoto, 'gallery-photo-open', openGalleryPhotoH1, hiddenGalleryPopupMenu, 'open-gallery-popup-menu', 'Открыть котогалерею', 'Закрыть котогалерею')
-popupMenu(toDoList, 'case-list-open', openToDoList, hiddenTodoListPopupMenu, 'open-todo-list-popup-menu', 'Открыть to-do list', 'Закрыть to-do list')
-popupMenu(sentencesClosed, 'sentences-pictures-opened', openSentences, hiddenSentencesPopupMenu, 'open-sentences-popup-menu', 'Открыть картинки-цитаты', 'Закрыть картинки-цитаты')
+popupMenu(hiddenMap,
+    'my-location-opened',
+    mapIcon,
+    hiddenMapPopupMenu,
+    'open-map-popup-menu',
+    'Показать на карте',
+    'Закрыть карту',
+    asideAnchor
+    )
+popupMenu(galleryPhoto,
+    'gallery-photo-open',
+    openGalleryPhotoH1,
+    hiddenGalleryPopupMenu,
+    'open-gallery-popup-menu',
+    'Открыть котогалерею',
+    'Закрыть котогалерею',
+    catGalleryAnchor
+    )
+popupMenu(toDoList,
+    'case-list-open',
+    openToDoList,
+    hiddenTodoListPopupMenu,
+    'open-todo-list-popup-menu',
+    'Открыть todo-list',
+    'Закрыть todo-list',
+    taskListAnchor
+    )
+popupMenu(sentencesClosed,
+    'sentences-pictures-opened',
+    openSentences,
+    hiddenSentencesPopupMenu,
+    'open-sentences-popup-menu',
+    'Открыть картинки-цитаты',
+    'Закрыть картинки-цитаты',
+    anchorQuotesPictures
+    )

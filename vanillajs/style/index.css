@@ -811,8 +811,8 @@ li .social-map-icon {
     width: auto;
     height: 20px;
     background-color: #FCF9F5;
-	/* -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1); */
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
     line-height: 20px;
     margin-left: 30px;
@@ -828,13 +828,13 @@ li .social-map-icon {
 	left: -1px;
 	bottom: 4px;
 	background: transparent;
-	/* -webkit-transform: skew(-5deg) rotate(-5deg);
+	-webkit-transform: skew(-5deg) rotate(-5deg);
 	-moz-transform: skew(-5deg) rotate(-5deg);
 	-ms-transform: skew(-5deg) rotate(-5deg);
-	-o-transform: skew(-5deg) rotate(-5deg); */
+	-o-transform: skew(-5deg) rotate(-5deg);
 	transform: skew(-5deg) rotate(-5deg);
-	/* -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); */
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.698);
 	z-index: -1;
 }
@@ -842,10 +842,10 @@ li .social-map-icon {
 .popup-menu::after {
     left: auto;
 	right: -1px;
-	/* -webkit-transform: skew(5deg) rotate(5deg);
+	-webkit-transform: skew(5deg) rotate(5deg);
 	-moz-transform: skew(5deg) rotate(5deg);
 	-ms-transform: skew(5deg) rotate(5deg);
-	-o-transform: skew(5deg) rotate(5deg); */
+	-o-transform: skew(5deg) rotate(5deg);
 	transform: skew(5deg) rotate(5deg);
 }
 
