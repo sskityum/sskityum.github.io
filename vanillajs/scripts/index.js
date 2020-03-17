@@ -1,5 +1,5 @@
 
-const rozhaImg = document.getElementById('banner')
+const myPhoto = document.getElementById('banner')
 const status = document.getElementById('status')
 const spLeft = document.querySelector('.left')
 const spRight = document.querySelector('.right')
@@ -15,7 +15,7 @@ function renderImg(src) {
         img.onload = () => resolve(img)
         img.onerror = () => reject(new Error(`Не удалось загрузить изображение ${src}`))
 
-        rozhaImg.appendChild(img)
+        myPhoto.appendChild(img)
     })
 }
 
