@@ -1,0 +1,200 @@
+@import './variables.scss';
+
+.todo-list-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.hidden-tasks {
+  display: none;
+}
+
+.case-list-closed {
+    height: 420px;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
+
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.todo-list-item label,
+.todo-list-input i,
+.trash {
+    display: block;
+    padding: 12px 18px;
+
+    background-color: $color_1_5;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px $color_1_5;
+
+    cursor: pointer;
+      
+    user-select: none;
+}
+
+.trash::before {
+    color: $color_3_2;
+}
+
+.todo-list-item label {
+    width: 100%;
+}
+
+.todo-list-item span {
+  display: flex;
+  align-items: center;
+  color: $color_3_2;
+}
+
+.todo-list-input + span::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+
+  margin-right: 16px;
+
+  background-color: $color_1_5;
+  border: 2px solid $color_3_1;
+  border-radius: 4px;
+}
+
+.todo-list-input:checked + span::before {
+  background-color: $color_3_5;
+  background-image: url("../../../../vanillajs/img/check_white_2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo-list-input:not(:checked):hover + span::before,
+.todo-list-input:not(:checked):focus + span::before {
+  background-color: $color_1_1;
+}
+
+.empty-tasks {
+  position: absolute;
+  bottom: 300px;
+  left: 300px;
+  color: $color_3_3;
+}
+
+.empty-tasks::before {
+  content: "";
+
+  width: 14px;
+  height: 13px;
+
+  margin-right: 13px;
+
+  background-image: url("../../../../vanillajs/img/check_green.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.add-task {
+  position: relative;
+  bottom: -10px;
+  display: flex;
+}
+
+.add-task-input {
+  flex-grow: 1;
+
+  box-sizing: border-box;
+  height: 46px;
+  margin-right: 16px;
+  padding: 12px;
+
+  font: inherit;
+
+  border: 1px solid $color_3_3;
+  border-radius: 4px;
+}
+
+.add-task-input:focus {
+  border: 1px solid $color_3_3;
+  outline: none;
+}
+
+.add-task-input:hover {
+  box-shadow: 0 0 6px $color_3_3;
+}
+
+.add-task-input::placeholder {
+  color: $color_3_3;
+  opacity: 0.3;
+}
+ 
+.add-task-button,
+.update-tasks-array,
+.update-card-array {
+  flex-shrink: 0;
+  padding: 12px;
+
+  font: inherit;
+  color: $color_3_5;
+
+  background-color: $color_3_2;
+  border: none;
+  border-radius: 4px;
+
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.update-tasks-array,
+.update-card-array {
+    width: 100%;
+    background-color: $color_3_3;
+    margin: 12px 0;
+    color: $color_3_5;
+}
+
+.update-tasks-array {
+  position: relative;
+  bottom: -10px;
+}
+
+.update-tasks-array:hover,
+.update-card-array:hover {
+    background-color: $color_3_2;
+    color: $color_1_5;
+}
+
+.add-task-button:hover,
+.add-task-button:focus {
+  background-color: $color_3_1;
+  outline: none;
+  color: $color_1_1;
+}
+
+.add-task-button:active {
+  background-color: $color_3_3;
+}

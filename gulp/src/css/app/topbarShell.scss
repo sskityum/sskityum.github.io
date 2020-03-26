@@ -1,0 +1,40 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+@include keyframes(move-topbar-shell-down) {
+    0% {
+        bottom: 95px;
+    }
+    100% {
+        bottom: 0px;
+    }    
+}
+
+.topbar-shell {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    position: absolute;
+    bottom: 95px;
+    animation-name: move-topbar-shell-down;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+
+    .logo {
+        display: inline-block;
+        border: 6px solid $color_1_3;
+        border-radius: 5px;
+        text-decoration: none;
+        color: $color_1_3;
+        margin-top: 10px;
+
+        .icon {
+            @include fontIcon;
+        }
+    }
+
+    @import './menuIcon.scss';
+    @import './hiddenMenu.scss';
+}
