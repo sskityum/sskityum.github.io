@@ -34,9 +34,6 @@ export const photos = [
     '../../vanillajs/img/cat_gallery/IMG_0918_min.JPG',
     '../../vanillajs/img/cat_gallery/IMG_0920_min.JPG',
     '../../vanillajs/img/cat_gallery/IMG_2395_min.JPG',
-    '../../vanillajs/img/cat_gallery/IMG_5789_min.JPG',
-    '../../vanillajs/img/cat_gallery/IMG_5791_min.JPG',
-    '../../vanillajs/img/cat_gallery/IMG_5827_min.JPG',
     '../../vanillajs/img/cat_gallery/IMG_20160201_210358_min.jpg',
     '../../vanillajs/img/cat_gallery/IMG_0268.JPG'
 ]
