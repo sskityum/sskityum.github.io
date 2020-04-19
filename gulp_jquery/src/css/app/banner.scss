@@ -1,0 +1,60 @@
+.decoration {
+    display: inline-block;
+    height: 482px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.decoration img {
+    filter: brightness(0%);
+    position: absolute;
+    right: 207px;
+    top: -60px;
+    opacity: 0;
+}
+
+.decoration_move img {
+    filter: brightness(100%);
+    transition-delay: 1s;
+    transition-duration: 3s;
+}
+
+.right,
+.left {
+    display: block;
+    width: 482px;
+    height: 482px;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.right {
+    background: url("../../../../vanillajs/img/Vietnam_p_7_right_1.png") no-repeat;
+    right: 25%;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    z-index: 0;
+}
+
+.left {
+    background: url("../../../../vanillajs/img/Vietnam_p_7_left.png") no-repeat;
+    left: 25%;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    z-index: 0;
+}
+
+.move_right {
+    transition-delay: 2s;
+    transform: translateX(-33%);
+    opacity: 0.1;
+}
+
+.move_left {
+    transition-delay: 2s;
+    transform: translateX(33%);
+    opacity: 0.1;
+}

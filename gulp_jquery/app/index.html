@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="../../vanillajs/style/fontawesome-free-5.12.1-web/css/fontawesome.css">
+    <link rel="stylesheet" href="../../vanillajs/style/fontawesome-free-5.12.1-web/css/brands.css">
+    <link rel="stylesheet" href="../../vanillajs/style/fontawesome-free-5.12.1-web/css/regular.css">
+    <link rel="stylesheet" href="../../vanillajs/style/fontawesome-free-5.12.1-web/css/solid.css">
+    <link rel="shortcut icon" href="../../vanillajs/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../KanbanSolutions-jquery-tmpl-f83ae70/jquery.tmpl.js"></script>  
+    <title>my page</title>
+</head>
+<body>
+    <div id="topbar">
+        <div class="topbar-shell">
+            <a class="logo" href="index.html">
+                <i class="icon">SSP</i>
+            </a>
+            <a href="#" class="decorative-arrow">
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div id="page">
+        <small id="status"></small>
+        <div id="banner" class="decoration">
+            <span class="left"></span>
+            <span class="right"></span>
+            <!-- <img src="../../vanillajs/img/Vietnam_p_7.png" alt="abc" id="my-picture"> -->
+        </div>
+        <div id="strap" class="?">
+            <div class="strap-shell">
+                <h3>У нас в деревне программистом называют того, кто умеет включать компьютер...</h3>
+            </div>
+        </div>
+        <hr>
+        <header id="wrap">
+            <p>
+                «Делай, что можешь, с тем, что имеешь, там, где ты есть…», - Теодор Рузвельт
+            </p>
+        </header>
+        <section id="accordion">
+            <h1>Котогалерея</h1> 
+            <div class="gallery-photo-closed">
+                <p class="gallety-photo-full">
+                    <img class="full-photo" src="../../vanillajs/img/cat_gallery/IMG_0031.JPG" width="100%" alt="Фото большое" class="full-foto">
+                </p>
+                <p class="gallery-photo-previews">
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0010.JPG" alt="Вася лежит">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0029.JPG" alt="Вася идёт">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0030.JPG" alt="Вася сидит 1">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0031.JPG" alt="Вася сидит 2">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0271_min.JPG" alt="Вася встречает новый год 1">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0915.JPG" alt="Вася сидит 3">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0916_min.JPG" alt="Вася сидит 4">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0917.JPG" alt="Вася сидит 5">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0918_min.JPG" alt="Вася играет">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0920_min.JPG" alt="Вася играет 2">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_2395_min.JPG" alt="Вася встречает новый год 2">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_20160201_210358_min.jpg" alt="Вася балуется">
+                    </button>
+                    <button class="gallery-photo-preview" type="button">
+                        <img src="../../vanillajs/img/cat_gallery/IMG_0268.JPG" alt="Вася встречает новый год 6">
+                    </button>
+                </p>
+            </div>
+            <h1>Список дел</h1>
+            <div class="case-list-closed">
+                <ul class="todo-list">
+                </ul>
+                <p class="empty-tasks hidden-tasks">
+                    Все задачи выполнены. Новых задач нет.
+                </p>
+                <form class="add-task" action="#" method="POST">
+                    <input class="add-task-input" type="text" aria-label="Описание задачи" placeholder="Сделать лекарство против короновирусной инфекции COVID-19" required>
+                    <button class="add-task-button" type="submit">
+                        Добавить задачу
+                    </button>
+                </form>
+                <script id="task-template" type="text/x-jquery-template">
+                    <li class="todo-list-item">
+                        <label>
+                            <input type="checkbox" class="todo-list-input" {%if (taskMark == 'marked')%}checked="checked"{%/if%}>
+                            <span>
+                                ${ taskDataDescription }
+                            </span>
+                        </label>
+                        <i class="far trash fa-trash-alt"></i>
+                    </li>
+                </script>
+                <button class="update-tasks-array">Записать todo-list в localStorage</button>
+            </div>
+            <h1>Цитаты</h1>
+            <div class="sentences-pictures-closed">
+                <ul class="sentences">
+                </ul>
+                <button class="update-card-array">Записать лайки в localStorage</button>
+            </div>
+        </section>
+    </div>
+    <aside id="aside">
+        <nav id="nav" class="navigation"></nav>
+        <div id="aside-anchor" class="hidden-my-location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d642.952233779928!2d65.55753096084618!3d57.17765821987813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1584416948587!5m2!1sru!2sru" 
+                width="800" 
+                height="600" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0">
+            </iframe>
+        </div>
+    </aside>
+    <footer id="footer" class="wrap">
+        <ul class="social-networks">
+            <li class="social-network">
+                <i class="fas fa-phone">
+                    <small>8 904 887-40-54</small>
+                </i>
+            </li>
+            <li class="social-network">
+                <a href="https://vk.com/id559960559">
+                    <i class="fab fa-vk fa-2x"></i>
+                </a>
+            </li>
+            <li class="social-network">
+                <a href="https://twitter.com/tot7BaJPud17CSG">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </li>
+            <li class="social-network">
+                <a href="https://t.me/sskityum">
+                    <i class="fab fa-telegram-plane fa-2x"></i>
+                </a>
+            </li>
+            <li class="social-network">
+                <a href="mailto:sskityum@gmail.com">
+                    <i class="fas fa-mail-bulk fa-2x"></i>
+                </a>
+            </li>
+            <li class="social-network map-icon">
+                <div class="social-map-icon title-plus-popup-menu">
+                    <i class="fas fa-map-marked-alt fa-2x"></i>
+                    <p class="popup-menu hidden-map-popup-menu"></p>
+                </div>
+            </li>
+        </ul>
+    </footer>
+    <script src="./static/js/bundle.js"></script>
+</body>
+</html>
