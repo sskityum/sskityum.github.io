@@ -62,26 +62,10 @@ body {
             margin-top: 10px;
             margin-bottom: 40px;
         }
-        
-        .gallery-photo-closed,
-        .case-list-closed,
-        .sentences-pictures-closed,
-        .hidden-gallery-popup-menu,
-        .hidden-todo-list-popup-menu,
-        .hidden-sentences-popup-menu {
-            display: none;
-        }
-
-        .gallery-photo-open,
-        .case-list-open,
-        .sentences-pictures-opened,
-        .open-gallery-popup-menu,
-        .open-todo-list-popup-menu,
-        .open-sentences-popup-menu {
-            display: block;
-        }
 
         #accordion {
+            
+
             width: 100%;
 
             @import './app/catGallery.scss';

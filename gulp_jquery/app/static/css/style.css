@@ -224,20 +224,6 @@ body {
     body #page #wrap {
       margin-top: 10px;
       margin-bottom: 40px; }
-    body #page .gallery-photo-closed,
-    body #page .case-list-closed,
-    body #page .sentences-pictures-closed,
-    body #page .hidden-gallery-popup-menu,
-    body #page .hidden-todo-list-popup-menu,
-    body #page .hidden-sentences-popup-menu {
-      display: none; }
-    body #page .gallery-photo-open,
-    body #page .case-list-open,
-    body #page .sentences-pictures-opened,
-    body #page .open-gallery-popup-menu,
-    body #page .open-todo-list-popup-menu,
-    body #page .open-sentences-popup-menu {
-      display: block; }
     body #page #accordion {
       width: 100%; }
       body #page #accordion .gallery-photo-closed {
@@ -275,7 +261,6 @@ body {
         outline: 5px solid #FFEECF;
         outline-offset: -5px; }
       body #page #accordion .case-list-closed {
-        height: 420px;
         background-color: #C7B6DC; }
         body #page #accordion .case-list-closed .todo-list {
           margin: 0;

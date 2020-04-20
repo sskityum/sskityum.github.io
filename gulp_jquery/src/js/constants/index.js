@@ -61,7 +61,7 @@ export const hdCardsData = [
         cardUrl: '../../vanillajs/img/quotes_pictures/kotik.svg',
         likesNumber: '0',
         text: 'Смешная картинка со смыслом - 1410266806_frazochki-kartinochki-pozitivchik-20.svg',
-        winner: true,
+        winner: false,
         likesOld: '0'
     },
     {
