@@ -396,7 +396,8 @@ body {
         background-color: #786A8A;
         color: #C7B6DC; }
       body #page #accordion .sentences-pictures-closed {
-        background-color: #81C399; }
+        background-color: #81C399;
+        height: 801px; }
         body #page #accordion .sentences-pictures-closed .sentences {
           display: flex;
           flex-wrap: wrap;
