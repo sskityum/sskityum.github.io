@@ -1,0 +1,105 @@
+@import './app/variables';
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+    background-color: $color_1_5;
+    #page,
+    #topbar,
+    #footer,
+    #aside {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        position: relative;
+    }
+
+    h2, h3, p {
+        line-height: 30px;
+        color: $color_1_3;
+    }
+    
+    h1 {
+        color: $color_2_3;
+        padding: 10px 0;
+        letter-spacing: 3px;
+        word-spacing: 10px;
+        color: $color_1_2;
+        text-shadow: -1px -1px $color_1_5, 1px 1px $color_2_3;
+        font-size: 24pt;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    #topbar {
+        height: 100px;
+        z-index: 1;
+        @import './app/topbarShell.scss';
+    }
+
+    #page {
+        @import './app/banner.scss';
+        @import './app/strap.scss';
+        hr {
+            height: 10px;
+            border: 0;
+            border-radius: 0 0 3px 3px;
+            background-color: $color_1_2;
+        }
+        
+        .gallery-photo-closed,
+        .case-list-closed,
+        .sentences-pictures-closed,
+        .hidden-gallery-popup-menu,
+        .hidden-todo-list-popup-menu,
+        .hidden-sentences-popup-menu {
+            display: none;
+        }
+
+        .gallery-photo-open,
+        .case-list-open,
+        .sentences-pictures-opened,
+        .open-gallery-popup-menu,
+        .open-todo-list-popup-menu,
+        .open-sentences-popup-menu {
+            display: block;
+        }
+
+        @import './app/catGallery.scss';
+        @import './app/taskList.scss';
+        @import './app/sentences.scss';
+        @import './app/tooltip.scss';
+    }
+
+    #aside {
+        .hidden-my-location {
+            display: none;            
+        }
+
+        .my-location-opened {
+            display: block;
+        }
+    }
+    
+    @import './app/footer.scss';
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    i {
+        font-style: italic;
+    }
+}
+
+@font-face {
+    font-family: "Havana";
+    src: url("../../../../vanillajs/style/fonts/18290.ttf");
+    font-weight: normal;
+}
