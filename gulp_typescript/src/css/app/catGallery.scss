@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+.hidden-gallery-popup-menu {
+    top: 30px;
+}
+
 .gallery {
     display: flex;
     flex-direction: column;

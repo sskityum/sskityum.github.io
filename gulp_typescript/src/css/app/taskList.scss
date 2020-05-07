@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+.hidden-todo-list-popup-menu {
+  top: 30px;
+}
+
 .case-list-closed {
   height: 420px;
   background-color: $color_2_5;
@@ -105,7 +109,7 @@
       }
       
       .todo-list-input:checked + span::before {
-        background-color: $color_2_1;
+        background-color: $color_2_2;
         background-image: url("../../../../vanillajs/img/check_white_2.svg");
         background-repeat: no-repeat;
         background-position: center;
@@ -113,7 +117,7 @@
       
       .todo-list-input:not(:checked):hover + span::before,
       .todo-list-input:not(:checked):focus + span::before {
-        background-color: $color_2_1;
+        background-color: $color_2_2;
       }
 
       span {
@@ -129,6 +133,7 @@
   position: relative;
   bottom: -10px;
   display: flex;
+  height: 46px;
   
   .add-task-input {
     flex-grow: 1;
@@ -165,7 +170,7 @@
     font: inherit;
     color: $color_3_5;
 
-    background-color: $color_2_2;
+    background-color: $color_2_3;
     border: none;
     border-radius: 4px;
 
@@ -175,13 +180,13 @@
 
   .add-task-button:hover,
   .add-task-button:focus {
-    background-color: $color_2_1;
+    background-color: $color_2_2;
     outline: none;
     color: $color_2_5;
   }
 
   .add-task-button:active {
-    background-color: $color_2_3;
+    background-color: $color_2_2;
   }
 }
 
