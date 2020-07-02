@@ -1,0 +1,186 @@
+.row {
+    .m-logo {
+        font-weight: 500;
+        font-family: cursive;
+        border: 4px solid burlywood;
+        border-radius: 10px;
+        color: burlywood;
+    }
+
+    .card-container {
+        padding-bottom: 100px;
+        // height: 600px;
+        width: 570px;
+    }
+
+    .ul-style {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    
+        list-style: none;
+
+        .li-style {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 380px;
+            margin-bottom: 40px;
+
+            .img-style {
+                width: 100%;
+                margin-bottom: 50px;
+            }
+        }
+
+        .li-first-place::before,
+        .li-second-place::before,
+        .li-third-place::before {
+            content: "";
+            position: absolute;
+            bottom: -35px;
+            left: -1px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+        
+            font-weight: 500;
+            color: #ffffff;
+            border-radius: 5px;
+        
+            background-color: #007bff59;
+        }
+
+        .li-first-place::before {
+            content: "1 место";
+        }
+
+        .li-second-place::before {
+            content: "2 место";
+        }
+
+        .li-third-place::before {
+            content: "3 место";
+        }
+
+        .li-winner-enter {
+            opacity: 0;
+        }
+
+        .li-winner-enter-active {
+            transition: opacity 2000ms ease-out;
+            opacity: 1;
+        }
+
+        .li-winner-exit {
+            opacity: 0;
+        }
+
+        .li-winner-exit-active {
+            transition: opacity 1000ms ease-out;
+            opacity: 0;
+        }
+
+        .li-winner {
+            position: absolute;
+            left: 300px;
+            order: -1;
+            width: 50%;
+            height: 635px;
+            margin: 30px 0;
+
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: space-between;            
+        }
+
+        .li-winner::before {
+            content: "Фаворит лайкового рейтинга";
+            position: absolute;
+            top: -35px;
+            left: -1px;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+        
+            font-weight: 500;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-radius: 5px;
+        
+            background-color: #007bff;
+        }
+    }
+
+    .like-counter-loc {
+        position: absolute;
+        bottom: -7px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+
+        .like-loc {
+            margin-left: -50px;
+        }
+
+        .likesNumber-loc {
+            margin: 0 auto;
+        }
+
+        .source-loc {
+            margin-right: 10px;
+        }
+    }
+
+    .heart-style-primary {
+        opacity: 0.1;
+    }
+
+    .heart-style-up,
+    .heart-style-down {
+        position: absolute;
+        left: 60px;
+    }
+
+    .heart-style-up-enter,
+    .heart-style-down-enter {
+        opacity: 1;
+        transform: scale(2.0);
+    }
+
+    .heart-style-up-enter-active,
+    .heart-style-down-enter-active {
+        transition: opacity 100ms, transform 100ms;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .heart-style-up-exit,
+    .heart-style-down-exit {
+        opacity: 1;
+    }
+
+    .heart-style-up-exit-active,
+    .heart-style-down-exit-active {
+        transition: opacity 100ms, transform 100ms;
+        transform: scale(1.0);
+        opacity: 0;
+    }
+
+    .jumbotron-poz {
+        position: relative;
+        height: 100px;
+        left: 110px;
+        bottom: -260px;
+    }
+}
+

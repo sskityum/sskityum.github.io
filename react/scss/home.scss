@@ -1,0 +1,128 @@
+.row {
+    .topbar-h {
+        height: 10rem;
+        display: flex;
+        padding: 0;
+    }
+
+    .saver-h {
+        height: 498px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .strap-h {
+        height: 10rem;
+        display: flex;
+        padding: 0;
+    }
+
+    .saver,
+    .saver-left,
+    .saver-right {
+        position: absolute;
+    }
+
+    .saver-left {
+        left: 180px;
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    .saver-right {
+        left: 536px;
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    .saver-enter-active {
+        animation: saver 1500ms ease-in alternate-reverse;    
+    }
+
+    .saver-left-enter-active {
+        animation: saver-left 800ms ease-in alternate-reverse;
+    }
+
+    .saver-right-enter-active {
+        animation: saver-right 800ms ease-in alternate-reverse;
+    }
+
+    .cont-jumb {
+        padding: 30px 0px;
+        margin-left: auto;
+        margin: auto;
+
+        p {
+            margin-left: 170px;
+        }
+    }
+
+    .strap-enter-active {
+        animation: strap 500ms ease-in alternate-reverse;
+    }
+
+    .logo-enter-active {
+        animation: logo 500ms ease-in alternate-reverse;
+    }
+}
+
+@keyframes saver {
+    0% {
+        filter: brightness(100%);
+        transform: translateY(0);
+    }
+
+    100% {
+        filter: brightness(0%);
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes saver-left {
+    0% {
+        opacity: 0.3;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(178px);
+    }
+}
+
+@keyframes saver-right {
+    0% {
+        opacity: 0.3;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-178px);
+    }
+}
+
+@keyframes strap {
+    0% {
+        opacity: 1.0;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes logo {
+    0% {
+        opacity: 1.0;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}

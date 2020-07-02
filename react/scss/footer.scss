@@ -1,0 +1,12 @@
+.row {
+    .icon-poz {
+        display: flex;
+        justify-content: center;
+
+        a {
+            color: royalblue;
+        }
+    }
+
+    @import './modal.scss';
+}
